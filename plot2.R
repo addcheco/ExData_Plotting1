@@ -4,10 +4,10 @@ reformdata <- read.table(data, header=TRUE, sep=";", stringsAsFactors = FALSE, d
 importantdata <- reformdata[reformdata$Date %in% c("1/2/2007", "2/2/2007") ,]
 #only from Feb1-Feb2
 
+png("plot2.png", width=480, height=480) #export as image
 NumGlobal <- as.numeric(importantdata$Global_active_power)
 #make the variable numeric
 reformdate <- strptime(paste(importantdata$Date, importantdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 #reformat date to day,month,year hour,minute,second
-png("plot2.png", width=480, height=480) #export as image
 plot(reformdate, NumGlobal, xlab="", ylab="Global Active Power (kilowatts)", type= "l")
 dev.off() #sign out
