@@ -8,6 +8,6 @@ NumGlobal <- as.numeric(importantdata$Global_active_power)
 #make the variable numeric
 reformdate <- strptime(paste(importantdata$Date, importantdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 #reformat date to day,month,year hour,minute,second
-png("plot1.png", width=480, height=480) #export as image
+png("plot2.png", width=480, height=480) #export as image
 plot(reformdate, NumGlobal, xlab="", ylab="Global Active Power (kilowatts)", type= "l")
 dev.off() #sign out
